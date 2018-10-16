@@ -7,6 +7,7 @@ using DevExpress.Skins;
 using DevExpress.XtraSplashScreen;
 using DevExpress.LookAndFeel;
 using System.Threading;
+using System.Drawing;
 
 namespace TournamentSortSys
 {
@@ -27,11 +28,32 @@ namespace TournamentSortSys
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("Office 2010 Blue");
 
             SplashScreenManager.ShowForm(typeof(SplashScreen1));
             Thread.Sleep(3000);
-            Application.Run(new Form1());
+            Application.Run(new MainForm() { Icon = AppIcon });
         }
+
+        static bool? isTable = null;
+
+        public static bool IsTable
+        {
+            get
+            {
+                if(isTable==null)
+                {
+                    
+                }
+
+                return false;
+            }
+        }
+
+        public static Icon AppIcon { get { return DevExpress.Utils.ResourceImageHelper.CreateIconFromResourcesEx("TournamentSortSys.asset.system.icon", typeof(MainForm).Assembly); } }
+        public static MainForm MainForm { get; private set; }
+        public static void SetupAsTablet()
+        {
+        }
+
     }
 }
