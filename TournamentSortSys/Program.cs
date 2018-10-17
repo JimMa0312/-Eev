@@ -30,8 +30,16 @@ namespace TournamentSortSys
             SkinManager.EnableFormSkins();
 
             SplashScreenManager.ShowForm(typeof(SplashScreen1));
+            MainForm = new MainForm() { Icon = AppIcon };
+
+            if(Program.IsTable)
+            {
+                SetupAsTablet();
+            }
+
             Thread.Sleep(3000);
-            Application.Run(new MainForm() { Icon = AppIcon });
+            Application.Run(MainForm);
+
         }
 
         static bool? isTable = null;
@@ -42,10 +50,10 @@ namespace TournamentSortSys
             {
                 if(isTable==null)
                 {
-                    
+                    isTable = TournamentSortSys.Common.DeviceDetector.IsTablet;
                 }
 
-                return false;
+                return isTable.Value;
             }
         }
 
@@ -53,6 +61,11 @@ namespace TournamentSortSys
         public static MainForm MainForm { get; private set; }
         public static void SetupAsTablet()
         {
+            MainForm.ShowTitleNavPane();
+            MainForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            MainForm.WindowState = FormWindowState.Maximized;
+            DevExpress.XtraEditors.WindowsFormsSettings.PopupMenuStyle = DevExpress.XtraEditors.Controls.PopupMenuStyle.RadialMenu;
+            DevExpress.Utils.TouchHelpers.TouchKeyboardSupport.EnableTouchKeyboard = true;
         }
 
     }

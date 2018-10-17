@@ -147,6 +147,7 @@ namespace TournamentSortSys.Common
                 }
                 if (!HasTouchSupport)
                 {
+                    //TODO
                     return false;
                 }
 

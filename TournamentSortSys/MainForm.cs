@@ -19,6 +19,11 @@ namespace TournamentSortSys
             InitializeComponent();
         }
 
+        public void ShowTitleNavPane()
+        {
+            tileNavPane.Visible = true;
+        }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);

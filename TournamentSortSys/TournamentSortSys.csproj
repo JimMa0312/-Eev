@@ -69,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\DeviceDetector.cs" />
+    <Compile Include="Common\ViewModels\DocumentsViewModel.cs" />
+    <Compile Include="Common\ViewModels\IUnitOfWork.cs" />
+    <Compile Include="Common\Views\ToolbarExtension.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +86,7 @@
     <Compile Include="SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewsModel\TSDbViewModel.cs" />
     <Compile Include="WaitForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,7 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="System\" />
-    <Folder Include="ViewsModel\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="asset\江西高校青年教师-分组排序系统.jpg" />
